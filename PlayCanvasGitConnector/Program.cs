@@ -6,10 +6,16 @@ using DotNetEnv;
 
 class Program
 {
-    private const string ApiBaseUrl = "https://playcanvas.com/api";
-    private const string PlayCanvasBranchId = "6c77b015-f2c6-4f3c-ad68-9e7a9292cfb0";
-    private const string AppName = "Playroom";
-    private const string _environmentFile = "C:\\Users\\timde\\Documents\\GitHub\\New folder\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\.env";
+    private const string API_BASE_URL = "https://playcanvas.com/api";
+    private const string PLAYCANVAS_BRANCH_ID = "6c77b015-f2c6-4f3c-ad68-9e7a9292cfb0";
+    private const string APP_NAME = "Playroom";
+
+    // env variables declaration
+    private const string OUTPUT_FOLDER = "OUTPUT_FOLDER";
+    private const string GIT_FOLDER = "GIT_FOLDER";
+    private const string PLAYCANVAS_TOKEN = "PLAYCANVAS_TOKEN";
+    private const string PLAYCANVAS_PROJECT_ID = "PLAYCANVAS_PROJECT_ID";
+    private const string SCENE_ID = "SCENE_ID";
 
     private static string? _outputFolder;
     private static string? _gitFolder;
@@ -19,36 +25,42 @@ class Program
 
     static async Task Main()
     {
-        Console.WriteLine($"{_environmentFile}");
-        Env.Load(_environmentFile);
+        string? pathToEnv = $"{Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory)?.Parent?.Parent?.Parent?.FullName}\\.env";
 
-        _outputFolder = Environment.GetEnvironmentVariable("OUTPUT_FOLDER");
-        _gitFolder = Environment.GetEnvironmentVariable("GIT_FOLDER");
-        _token = Environment.GetEnvironmentVariable("PLAYCANVAS_TOKEN");
-        _projectId = Environment.GetEnvironmentVariable("PLAYCANVAS_PROJECT_ID");
-        _sceneId = Environment.GetEnvironmentVariable("SCENE_ID");
+        if (pathToEnv == null)
+        {
+            throw new Exception("Path to .env file not found.");
+        }
+
+        Env.Load(pathToEnv);
+
+        _outputFolder = Environment.GetEnvironmentVariable(OUTPUT_FOLDER);
+        _gitFolder = Environment.GetEnvironmentVariable(GIT_FOLDER);
+        _token = Environment.GetEnvironmentVariable(PLAYCANVAS_TOKEN);
+        _projectId = Environment.GetEnvironmentVariable(PLAYCANVAS_PROJECT_ID);
+        _sceneId = Environment.GetEnvironmentVariable(SCENE_ID);
 
         try
         {
-
-            // Step 1: Start the export job
+            // start the export job
             Console.WriteLine("Starting export job...");
             var jobId = await StartExportJob();
 
-            // Step 2: Poll for job status
+            // poll for job status
             Console.WriteLine("Waiting for export to complete...");
             var downloadUrl = await PollForJobCompletion(jobId);
 
-            // Step 3: Download the exported app
+            // download the exported app
             Console.WriteLine("Downloading exported app...");
             var zipFilePath = await DownloadApp(downloadUrl);
 
-            // Step 4: Extract the ZIP file
+            // extract the ZIP file and delete it
             Console.WriteLine("Extracting app...");
-            ExtractZip(zipFilePath, _outputFolder);
+            ExtractZip(zipFilePath);
 
             Console.WriteLine($"App successfully exported to '{_outputFolder}'!");
 
+            // push the project to GitHub
             Console.WriteLine("Pushing project to GitHub...");
             PushToGitHub(_gitFolder);
         }
@@ -67,18 +79,22 @@ class Program
         {
             project_id = _projectId,
             scenes = new[] { _sceneId },
-            name = AppName,
-            branch_id = PlayCanvasBranchId
+            name = APP_NAME,
+            branch_id = PLAYCANVAS_BRANCH_ID
         };
 
-        var response = await client.PostAsync($"{ApiBaseUrl}/apps/download",
+        // example of request Body from PlayCanvas API documentation. We perform a POST request to the API endpoint with the request body
+        //{"project_id": "your_project_id_here", "scenes": ["your_scene_id_here"], "name": "Playroom", "branch_id": "your_branch_id_here"}
+        var response = await client.PostAsync($"{API_BASE_URL}/apps/download",
             new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json"));
 
         response.EnsureSuccessStatusCode();
 
+        // the response comes in this form. We cache and return the id to check on the status of the process
+        // {"id": 123456,"status": "running","messages": [],"created_at": "2025-01-20T23:11:32.497Z","modified_at": "2025-01-20T23:11:32.497Z","data": {"owner_id": someValue,"project_id": someValue,"branch_id": "someValue","name": "project_name", "scenes": ["scene_number"]}}
         var responseJson = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
 
-        Console.WriteLine($"{responseJson.RootElement.ToString()}");
+        Console.WriteLine($"{responseJson.RootElement}");
 
         return responseJson.RootElement.GetProperty("id").GetInt32();
     }
@@ -90,7 +106,8 @@ class Program
 
         while (true)
         {
-            var response = await client.GetAsync($"{ApiBaseUrl}/jobs/{jobId}");
+            // we use the current job's id to check on the status of the job
+            var response = await client.GetAsync($"{API_BASE_URL}/jobs/{jobId}");
             response.EnsureSuccessStatusCode();
 
             var responseJson = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
@@ -108,6 +125,7 @@ class Program
             }
             Console.WriteLine($"Job status: {downloadUrl}");
 
+            // once the job is complete, the downloadURL value will no longer be null and we get the download URL
             if (status == "complete" && downloadUrl != null)
             {
                 return downloadUrl;
@@ -117,15 +135,17 @@ class Program
                 throw new Exception("Export job failed.");
             }
 
-            await Task.Delay(2000); // Poll every 2 seconds
+            // wait for 2 seconds before polling again
+            await Task.Delay(2000);
         }
     }
 
     private static async Task<string> DownloadApp(string downloadUrl)
     {
         using var client = new HttpClient();
-        var zipFilePath = $"{AppName}.zip";
+        var zipFilePath = $"{APP_NAME}.zip";
 
+        // now that we know the job is completed, we can download the file
         var response = await client.GetAsync(downloadUrl);
         response.EnsureSuccessStatusCode();
 
@@ -135,11 +155,16 @@ class Program
         return zipFilePath;
     }
 
-    private static void ExtractZip(string zipFilePath, string outputFolder)
+    private static void ExtractZip(string zipFilePath)
     {
-        if (Directory.Exists(outputFolder))
+        if(_outputFolder == null)
         {
-            Directory.Delete(outputFolder, true);
+            throw new Exception("Output folder directory not set.");
+        }
+
+        if (Directory.Exists(_outputFolder))
+        {
+            Directory.Delete(_outputFolder, true);
         }
 
         if (!Directory.Exists(_outputFolder))
@@ -147,7 +172,7 @@ class Program
             Directory.CreateDirectory(_outputFolder);
         }
 
-        ZipFile.ExtractToDirectory(zipFilePath, outputFolder);
+        ZipFile.ExtractToDirectory(zipFilePath, _outputFolder);
     }
 
     private static void PushToGitHub(string? projectFolder)
@@ -160,7 +185,6 @@ class Program
         // Navigate to the project folder
         Environment.CurrentDirectory = projectFolder;
         Console.WriteLine($"Current directory: {Environment.CurrentDirectory}");
-
 
         try
         {

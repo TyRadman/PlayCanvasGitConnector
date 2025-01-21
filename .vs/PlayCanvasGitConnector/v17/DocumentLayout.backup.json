@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\timde\\Documents\\GitHub\\New folder\\PlayCanvasGitConnector\\",
+  "WorkspaceRootPath": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|c:\\users\\timde\\documents\\github\\new folder\\playcanvasgitconnector\\playcanvasgitconnector\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|c:\\users\\timde\\documents\\github\\playcanvasgitconnector\\playcanvasgitconnector\\playcanvasgitconnector\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|solutionrelative:playcanvasgitconnector\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\New folder\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\Program.cs",
               "RelativeDocumentMoniker": "PlayCanvasGitConnector\\Program.cs",
-              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\New folder\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\Program.cs*",
-              "RelativeToolTip": "PlayCanvasGitConnector\\Program.cs*",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAgwCIAAAAzAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\Program.cs",
+              "RelativeToolTip": "PlayCanvasGitConnector\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwAoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-20T22:02:00.568Z",
               "EditorCaption": ""

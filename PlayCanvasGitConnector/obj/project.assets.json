@@ -4772,11 +4772,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\timde\\Documents\\GitHub\\New folder\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj",
+      "projectUniqueName": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj",
       "projectName": "PlayCanvasGitConnector",
-      "projectPath": "C:\\Users\\timde\\Documents\\GitHub\\New folder\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj",
+      "projectPath": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj",
       "packagesPath": "C:\\Users\\timde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\timde\\Documents\\GitHub\\New folder\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\obj\\",
+      "outputPath": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4808,7 +4808,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
+        "auditMode": "direct"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -4841,7 +4841,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
