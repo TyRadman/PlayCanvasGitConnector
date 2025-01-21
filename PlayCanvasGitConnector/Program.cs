@@ -8,7 +8,6 @@ class Program
 {
     private const string ApiBaseUrl = "https://playcanvas.com/api";
     private const string PlayCanvasBranchId = "6c77b015-f2c6-4f3c-ad68-9e7a9292cfb0";
-    private const int SceneId = 1956787;
     private const string AppName = "Playroom";
     private const string _environmentFile = "C:\\Users\\timde\\Documents\\GitHub\\New folder\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\.env";
 
@@ -16,6 +15,7 @@ class Program
     private static string? _gitFolder;
     private static string? _token;
     private static string? _projectId;
+    private static string? _sceneId;
 
     static async Task Main()
     {
@@ -26,11 +26,7 @@ class Program
         _gitFolder = Environment.GetEnvironmentVariable("GIT_FOLDER");
         _token = Environment.GetEnvironmentVariable("PLAYCANVAS_TOKEN");
         _projectId = Environment.GetEnvironmentVariable("PLAYCANVAS_PROJECT_ID");
-
-        Console.WriteLine($"Output Folder: {_outputFolder}");
-        Console.WriteLine($"Git Folder: {_gitFolder}");
-        Console.WriteLine($"PlayCanvas Token: {_token}");
-        Console.WriteLine($"PlayCanvas Project ID: {_projectId}");
+        _sceneId = Environment.GetEnvironmentVariable("SCENE_ID");
 
         try
         {
@@ -70,7 +66,7 @@ class Program
         var requestBody = new
         {
             project_id = _projectId,
-            scenes = new[] { SceneId },
+            scenes = new[] { _sceneId },
             name = AppName,
             branch_id = PlayCanvasBranchId
         };
