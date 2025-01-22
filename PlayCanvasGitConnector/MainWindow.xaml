@@ -66,24 +66,27 @@
                     Click="PushButton_Click" 
                     Margin="0,0,10,0" 
                     Padding="8, 4, 8, 4"
+                    BorderBrush ="{StaticResource PlayCanvasHighlightOrange}"
                     Background="{StaticResource PlayCanvasSidebar}" 
-                    Foreground="{StaticResource PlayCanvasWhite}">
+                    Foreground="{StaticResource PlayCanvasHighlightOrange}">
                 Download and push
             </Button>
             <Button x:Name="StopButton" 
                     Click="StopButton_Click" 
                     Margin="0,0,10,0" 
                     Padding="8, 4, 8, 4"
-                    Background="{StaticResource PlayCanvasErrorRed}" 
-                    Foreground="{StaticResource PlayCanvasWhite}" ToolTip="Stop the job taking place" IsCancel="True">
+                    BorderBrush ="{StaticResource PlayCanvasHighlightOrange}"
+                    Background="{StaticResource PlayCanvasSidebar}" 
+                    Foreground="{StaticResource PlayCanvasHighlightOrange}" ToolTip="Stop the job taking place" IsCancel="True">
                 Stop
             </Button>
             <Button x:Name="ClearLogButton" 
                     Click="ClearLogButton_Click" 
                     Margin="0,0,10,0" 
                     Padding="8, 4, 8, 4"
+                    BorderBrush ="{StaticResource PlayCanvasHighlightOrange}"
                     Background="{StaticResource PlayCanvasSidebar}" 
-                    Foreground="{StaticResource PlayCanvasWhite}">
+                    Foreground="{StaticResource PlayCanvasHighlightOrange}">
                 Clear Log
             </Button>
             <CheckBox x:Name="UseEnvVariablesCheckBox" 

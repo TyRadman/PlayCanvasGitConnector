@@ -110,7 +110,7 @@ namespace PlayCanvasGitConnector
 
         private void StopButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Program.CancelJob();
         }
 
         #region Clear Button
