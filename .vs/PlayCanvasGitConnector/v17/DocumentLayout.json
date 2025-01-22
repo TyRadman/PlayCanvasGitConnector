@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|c:\\users\\timde\\documents\\github\\playcanvasgitconnector\\playcanvasgitconnector\\playcanvasgitconnector\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|solutionrelative:playcanvasgitconnector\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|c:\\users\\timde\\documents\\github\\playcanvasgitconnector\\playcanvasgitconnector\\playcanvasgitconnector\\colorpallette.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|solutionrelative:playcanvasgitconnector\\colorpallette.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|c:\\users\\timde\\documents\\github\\playcanvasgitconnector\\playcanvasgitconnector\\playcanvasgitconnector\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|solutionrelative:playcanvasgitconnector\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|c:\\users\\timde\\documents\\github\\playcanvasgitconnector\\playcanvasgitconnector\\playcanvasgitconnector\\playcanvaspushcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|solutionrelative:playcanvasgitconnector\\playcanvaspushcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|c:\\users\\timde\\documents\\github\\playcanvasgitconnector\\playcanvasgitconnector\\playcanvasgitconnector\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{572D66BE-581A-458A-B99D-1E8B7FB72F2B}|PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj|solutionrelative:playcanvasgitconnector\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,14 +35,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "PlayCanvasGitConnector\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\MainWindow.xaml.cs",
+              "RelativeToolTip": "PlayCanvasGitConnector\\MainWindow.xaml.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowBoAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T06:14:06.757Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "PlayCanvasGitConnector\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\MainWindow.xaml",
+              "RelativeToolTip": "PlayCanvasGitConnector\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-22T08:00:04.693Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ColorPallette.xaml",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\ColorPallette.xaml",
+              "RelativeDocumentMoniker": "PlayCanvasGitConnector\\ColorPallette.xaml",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\ColorPallette.xaml",
+              "RelativeToolTip": "PlayCanvasGitConnector\\ColorPallette.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-22T07:33:08.165Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\Program.cs",
               "RelativeDocumentMoniker": "PlayCanvasGitConnector\\Program.cs",
               "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\Program.cs",
               "RelativeToolTip": "PlayCanvasGitConnector\\Program.cs",
-              "ViewState": "AgIAAL0AAAAAAAAAAAAmwLsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAEkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-20T22:02:00.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayCanvasPushContext.cs",
+              "DocumentMoniker": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasPushContext.cs",
+              "RelativeDocumentMoniker": "PlayCanvasGitConnector\\PlayCanvasPushContext.cs",
+              "ToolTip": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasPushContext.cs",
+              "RelativeToolTip": "PlayCanvasGitConnector\\PlayCanvasPushContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T07:09:28.218Z",
               "EditorCaption": ""
             }
           ]

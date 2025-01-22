@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlayCanvasGitConnector")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c13b17185a5588fa4d4ad46937d64b7de31816fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9f57fd56325c3308a15dd869bf2263167038f83")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlayCanvasGitConnector")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlayCanvasGitConnector")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

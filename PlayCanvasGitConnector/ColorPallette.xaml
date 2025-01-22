@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- PlayCanvas Color Palette -->
+    <SolidColorBrush x:Key="PlayCanvasBackground" Color="#1E1E1E"/>
+    <!-- Dark Gray Background -->
+    <SolidColorBrush x:Key="PlayCanvasLightGray" Color="#394346"/>
+    <!-- Light Gray -->
+    <SolidColorBrush x:Key="PlayCanvasSidebar" Color="#2F393C"/>
+    <!-- Sidebar Gray -->
+    <SolidColorBrush x:Key="PlayCanvasSecondaryGray" Color="#b2b8a1"/>
+    <!-- Secondary Gray -->
+    <SolidColorBrush x:Key="PlayCanvasHighlightOrange" Color="#FF7800"/>
+    <!-- Highlight Orange -->
+    <SolidColorBrush x:Key="PlayCanvasActiveGreen" Color="#00FF00"/>
+    <!-- Active Green -->
+    <SolidColorBrush x:Key="PlayCanvasErrorRed" Color="#FF4136"/>
+    <!-- Error Red -->
+    <SolidColorBrush x:Key="PlayCanvasWhite" Color="#FEFEFE"/>
+    <SolidColorBrush x:Key="PlayCanvasButtonDisabledBackground" Color="#2F393C"/>
+    <!-- Disabled Background -->
+    <SolidColorBrush x:Key="PlayCanvasButtonDisabledForeground" Color="#394346"/>
+    <!-- Disabled Foreground -->
+
+    <!-- White -->
+</ResourceDictionary>
