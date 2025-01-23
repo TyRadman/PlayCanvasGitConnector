@@ -2,15 +2,31 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType> <!-- WPF apps use WinExe -->
-    <TargetFramework>net8.0-windows</TargetFramework> <!-- Windows-specific TFM -->
+    <TargetFramework>net8.0-windows7.0</TargetFramework> <!-- Windows-specific TFM -->
     <ImplicitUsings>enable</ImplicitUsings> <!-- Optional: Enable implicit usings -->
     <UseWPF>true</UseWPF> <!-- Enable WPF -->
-    <Nullable>enable</Nullable> <!-- Optional: Enable nullable reference types -->
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <StartupObject>PlayCanvasGitConnector.Program</StartupObject>
+    <NuGetAuditMode>direct</NuGetAuditMode>
+    <NuGetAuditLevel>critical</NuGetAuditLevel> <!-- Optional: Enable nullable reference types -->
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".env" />
+    <None Remove="Resources\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
-    <PackageReference Include="EnvDotNet" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include=".env" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,11 @@
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\PlayCanvasGitConnector.exe
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\PlayCanvasGitConnector.dll
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\PlayCanvasGitConnector.deps.json
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\PlayCanvasGitConnector.runtimeconfig.json
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\PlayCanvasGitConnector.pdb
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\DotNetEnv.dll
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\EnvDotNet.dll
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\Microsoft.Extensions.Configuration.dll
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\Microsoft.Extensions.Primitives.dll
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Release\net8.0-windows\publish\Sprache.dll

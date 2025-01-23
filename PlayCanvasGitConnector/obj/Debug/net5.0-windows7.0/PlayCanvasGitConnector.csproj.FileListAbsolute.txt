@@ -1,0 +1,6 @@
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net5.0-windows7.0\PlayCanvasGitConnector.csproj.AssemblyReference.cache
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net5.0-windows7.0\ColorPallette.baml
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net5.0-windows7.0\MainWindow.g.cs
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net5.0-windows7.0\PlayCanvasGitConnector_Content.g.cs
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net5.0-windows7.0\PlayCanvasGitConnector_MarkupCompile.cache
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net5.0-windows7.0\PlayCanvasGitConnector_MarkupCompile.lref
