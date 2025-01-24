@@ -5,7 +5,7 @@ namespace PlayCanvasGitConnector.Models
 {
     internal static class GitHubModel
     {
-        internal static void PushToGitHub(string? projectFolder)
+        internal static async void PushToGitHub(string? projectFolder, CancellationTokenSource cancellationTokenSource)
         {
             LoggerService.Log($"Pushing local repo at {projectFolder} project to GitHub...", LogType.Info);
 
@@ -21,10 +21,11 @@ namespace PlayCanvasGitConnector.Models
 
             try
             {
-                RunGitCommand("add .");
-                RunGitCommand("commit -m \"Automated sync from PlayCanvas\"");
-                RunGitCommand("push -u origin master --force");
-                Console.WriteLine("Project successfully pushed to GitHub!");
+                cancellationTokenSource.Token.ThrowIfCancellationRequested();
+
+                await RunGitCommand("add .");
+                await RunGitCommand("commit -m \"Automated sync from PlayCanvas\"");
+                await RunGitCommand("push -u origin master --force");
                 LoggerService.Log("Project successfully pushed to GitHub!", LogType.Success);
             }
             catch (Exception ex)
@@ -33,9 +34,9 @@ namespace PlayCanvasGitConnector.Models
             }
         }
 
-        private static void RunGitCommand(string arguments)
+        private static async Task RunGitCommand(string arguments)
         {
-            Console.WriteLine($"Running Git command: git {arguments}");
+            LoggerService.Log($"Running Git command: git {arguments}", LogType.Info);
 
             var process = new Process
             {
@@ -51,24 +52,26 @@ namespace PlayCanvasGitConnector.Models
             };
 
             process.Start();
+
             string output = process.StandardOutput.ReadToEnd();
             string error = process.StandardError.ReadToEnd();
-            process.WaitForExit();
+
+            await process.WaitForExitAsync();
 
             if (process.ExitCode != 0 && output == "nothing to commit, working tree clean")
             {
-                Console.WriteLine("Nothing to commit, working tree clean");
+                LoggerService.Log("Nothing to commit, working tree clean", LogType.Success);
                 return;
             }
 
             if (process.ExitCode != 0)
             {
-                Console.WriteLine($"Git Command Output: {output}");
-                Console.WriteLine($"Git Command Error: {error}");
+                LoggerService.Log($"Git Command Output: {output}", LogType.Error);
+                LoggerService.Log($"Git Command Error: {error}", LogType.Error);
                 throw new Exception($"Git command failed: {error}");
             }
 
-            Console.WriteLine($"Git Command Output: {output}");
+            LoggerService.Log($"Git Command Output: {output}", LogType.Info);
         }
 
     }
