@@ -9,12 +9,9 @@ C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\Pl
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\Microsoft.Extensions.Primitives.dll
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\Sprache.dll
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector.csproj.AssemblyReference.cache
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\ColorPallette.baml
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\MainWindow.g.cs
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector_Content.g.cs
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector_MarkupCompile.cache
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector_MarkupCompile.lref
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\MainWindow.baml
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector.g.resources
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector.AssemblyInfoInputs.cache
@@ -27,3 +24,8 @@ C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\Pl
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector.pdb
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector.genruntimeconfig.cache
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\ref\PlayCanvasGitConnector.dll
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\Windows\MainWindow.g.cs
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\Windows\MainWindow.baml
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\Windows\ColorPallette.baml
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\Microsoft.WindowsAPICodePack.dll
+C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\Microsoft.WindowsAPICodePack.Shell.dll

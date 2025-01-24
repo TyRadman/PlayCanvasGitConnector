@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "TSIEiMdbygA=",
+  "dgSpecHash": "0A6lC0I50n8=",
   "success": true,
   "projectFilePath": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector\\PlayCanvasGitConnector.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\timde\\.nuget\\packages\\dotnetenv\\3.1.1\\dotnetenv.3.1.1.nupkg.sha512",
+    "C:\\Users\\timde\\.nuget\\packages\\microsoft-windowsapicodepack-core\\1.1.5\\microsoft-windowsapicodepack-core.1.1.5.nupkg.sha512",
+    "C:\\Users\\timde\\.nuget\\packages\\microsoft-windowsapicodepack-shell\\1.1.5\\microsoft-windowsapicodepack-shell.1.1.5.nupkg.sha512",
     "C:\\Users\\timde\\.nuget\\packages\\microsoft.extensions.configuration\\1.1.2\\microsoft.extensions.configuration.1.1.2.nupkg.sha512",
     "C:\\Users\\timde\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\1.1.2\\microsoft.extensions.configuration.abstractions.1.1.2.nupkg.sha512",
     "C:\\Users\\timde\\.nuget\\packages\\microsoft.extensions.primitives\\1.1.1\\microsoft.extensions.primitives.1.1.1.nupkg.sha512",
