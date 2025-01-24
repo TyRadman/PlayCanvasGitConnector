@@ -20,9 +20,11 @@ namespace PlayCanvasGitConnector.Models
         private string _scenesIds = string.Empty;
 
         private string _directoryPath = string.Empty;
+        private string _remoteGitUrl = string.Empty;
 
         private bool _isSyncButtonEnabled = true;
         private bool _isStopButtonEnabled = false;
+        private bool _isGitDirectory = true;
 
         public string APIKeyToken
         {
@@ -70,6 +72,15 @@ namespace PlayCanvasGitConnector.Models
                 OnPropertyChanged(nameof(DirectoryPath));
             }
         }
+        public string RemoteGitUrl
+        {
+            get => _remoteGitUrl;
+            set
+            {
+                _remoteGitUrl = value;
+                OnPropertyChanged(nameof(RemoteGitUrl));
+            }
+        }
 
         public bool IsSyncButtonEnabled
         {
@@ -80,7 +91,6 @@ namespace PlayCanvasGitConnector.Models
                 OnPropertyChanged(nameof(IsSyncButtonEnabled));
             }
         }
-
         public bool IsStopButtonEnabled
         {
             get => _isStopButtonEnabled;
@@ -88,6 +98,15 @@ namespace PlayCanvasGitConnector.Models
             {
                 _isStopButtonEnabled = value;
                 OnPropertyChanged(nameof(IsStopButtonEnabled));
+            }
+        }
+        public bool IsGitDirectory
+        {
+            get => _isGitDirectory;
+            set
+            {
+                _isGitDirectory = value;
+                OnPropertyChanged(nameof(IsGitDirectory));
             }
         }
 
@@ -128,8 +147,14 @@ namespace PlayCanvasGitConnector.Models
 
             if (!Directory.Exists(gitDirectory))
             {
-                LoggerService.Log($"Invalid git repository {gitDirectory}", LogType.Error);
-                return;
+                RemoteGitUrl = string.Empty;
+                IsGitDirectory = false;
+                LoggerService.Log($"{gitDirectory} doesn't contain .git. Please enter a remote git repository URL.", LogType.Error);
+                //return;
+            }
+            else
+            {
+                IsGitDirectory = true;
             }
 
             DirectoryPath = directory;
@@ -149,7 +174,9 @@ namespace PlayCanvasGitConnector.Models
                 APIKeyToken = APIKeyToken,
                 ProjectId = ProjectId,
                 BranchID = BranchId,
-                SceneIDs = ScenesIds.Split(',')
+                SceneIDs = ScenesIds.Split(','),
+                FileDirectory = DirectoryPath,
+                RemoteGitURL = RemoteGitUrl
             };
 
             IsSyncButtonEnabled = false;
@@ -179,6 +206,7 @@ namespace PlayCanvasGitConnector.Models
                 BranchId = context.BranchID;
                 ScenesIds = string.Join(",", context.SceneIDs);
                 DirectoryPath = context.FileDirectory;
+                RemoteGitUrl = GitHubModel.GetRemoteRepository(DirectoryPath);
             }
             catch (Exception ex)
             {
@@ -210,7 +238,8 @@ namespace PlayCanvasGitConnector.Models
                 ProjectId = ProjectId,
                 BranchID = BranchId,
                 SceneIDs = ScenesIds.Split(','),
-                FileDirectory = DirectoryPath
+                FileDirectory = DirectoryPath,
+                RemoteGitURL = GitHubModel.GetRemoteRepository(DirectoryPath)
             };
 
             string jsonString = JsonSerializer.Serialize(context, new JsonSerializerOptions

@@ -10,10 +10,12 @@ namespace PlayCanvasGitConnector
         public string? BranchID { get; set; }
         public string[]? SceneIDs { get; set; }
         public string? FileDirectory { get; set; }
+        public string? RemoteGitURL { get; set; } 
 
         internal bool IsValid()
         {
-            return !string.IsNullOrEmpty(APIKeyToken) && !string.IsNullOrEmpty(ProjectId) && SceneIDs != null && SceneIDs.Length > 0;
+            return !string.IsNullOrEmpty(APIKeyToken) && !string.IsNullOrEmpty(ProjectId) && SceneIDs != null && SceneIDs.Length > 0
+                && !string.IsNullOrEmpty(FileDirectory) && !string.IsNullOrEmpty(RemoteGitURL);
         }
 
         internal void LogContext(LogType logType)

@@ -16,5 +16,5 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 214978215576
 Windows\ColorPallette.xaml;Windows\MainWindow.xaml;
 
-True
+False
 

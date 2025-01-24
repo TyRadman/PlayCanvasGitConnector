@@ -118,14 +118,15 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="RemoteRepoLinkTextBox" 
-                     Text="{Binding DirectoryPath, UpdateSourceTrigger=PropertyChanged}" 
-                     IsEnabled="False"
+                     Text="{Binding RemoteGitUrl, UpdateSourceTrigger=PropertyChanged}" 
+                     VerticalScrollBarVisibility="Disabled"
+                     IsReadOnly="{Binding IsGitDirectory}"
                      VerticalAlignment="Center" 
                      HorizontalAlignment="Stretch"  
                      Margin="0,0,0,0" 
-                             Grid.Column="0"
-                    Background="{StaticResource PlayCanvasSidebar}" 
-                    Foreground="{StaticResource PlayCanvasWhite}"/>
+                     Grid.Column="0"
+                     Background="{StaticResource PlayCanvasSidebar}" 
+                     Foreground="{StaticResource PlayCanvasWhite}"/>
 
                 <Button Content="Initiate Git" 
                     IsEnabled="False"
@@ -227,11 +228,10 @@
                FontWeight="Bold"
                Margin="10, 20, 0, 0"
                Foreground="{StaticResource PlayCanvasHighlightOrange}">
-            Log
+            Log Window
         </Label>
 
         <!-- Log ScrollViewer -->
-
         <ScrollViewer x:Name="LogScrollViewer"
                       Grid.Row="3" 
                       VerticalScrollBarVisibility="Auto" 
@@ -241,6 +241,7 @@
                 x:Name="LogTextBlock" 
                 TextWrapping="Wrap" 
                 Margin="10, 0, 0, 0" 
+                Padding="0, 10, 0, 0"
                 Text="{Binding LogText, UpdateSourceTrigger=PropertyChanged}"
                 
                 Foreground="{StaticResource PlayCanvasWhite}"/>

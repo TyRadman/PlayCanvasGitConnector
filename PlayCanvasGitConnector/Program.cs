@@ -54,7 +54,7 @@ namespace PlayCanvasGitConnector
                 await _playCanvasModel.DownloadAllScripts(context, _cancellationTokenSource);
 
                 // push the project to GitHub
-                GitHubModel.PushToGitHub(DirectoriesManager.ProjectFolder);
+                await GitHubModel.PushToGitHub(DirectoriesManager.ProjectFolder, _cancellationTokenSource, context);
 
                 LoggerService.Log("Job finished successfully!", LogType.Success);
             }
