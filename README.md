@@ -88,7 +88,4 @@ All logs are automatically saved to a `log.txt` file, which is generated in the 
 
 ## Links
 
-[Watch a video showcasing the project here](https://www.youtube.com/watch?v=bf42XXvFCSs)
-
----
----
+[Watch a video showcasing the project here](https://www.youtube.com/watch?v=bf42XXvFCSs) (it will take you out of GitHub)
