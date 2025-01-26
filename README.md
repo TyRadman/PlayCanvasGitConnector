@@ -92,4 +92,4 @@ All logs are automatically saved to a `log.txt` file, which is generated in the 
 
 [Watch a video showcasing the project here](https://www.youtube.com/watch?v=bf42XXvFCSs)
 
-<a href="https://www.youtube.com/watch?v=bf42XXvFCSs" target="_blank" rel="noopener noreferrer">Watch a video showcasing the project here</a>
+<a href="https://www.youtube.com/watch?v=bf42XXvFCSs" target="_blank">Watch a video showcasing the project here externally</a>
