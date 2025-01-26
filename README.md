@@ -20,7 +20,6 @@ This application is ideal for developers and teams working with PlayCanvas (like
 
 ## How It Works
 
-![Process Diagram](./Images/ProcessDiagram.jpg)
 ![Process Diagram](./Images/SequenceDiagram.jpg)
 
 1. **Input Configuration**:
@@ -91,4 +90,4 @@ All logs are automatically saved to a `log.txt` file, which is generated in the 
 
 ## Links
 
-[Watch the video here](https://www.youtube.com/watch?v=your-video-id)
+[Watch a video showcasing the project here](https://www.youtube.com/watch?v=bf42XXvFCSs)
