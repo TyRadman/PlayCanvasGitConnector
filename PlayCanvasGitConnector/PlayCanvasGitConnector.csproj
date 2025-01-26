@@ -13,7 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove=".env" />
     <None Remove="Resources\Icon.ico" />
   </ItemGroup>
 
@@ -22,12 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetEnv" Version="3.1.1" />
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include=".env" />
   </ItemGroup>
 
 </Project>

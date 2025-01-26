@@ -15,7 +15,7 @@ namespace PlayCanvasGitConnector.LoggingServices
             OnStatusUpdated += PrintLine;
         }
 
-        internal static void Log(string message, LogType logType)
+        internal static void Log(string message, LogType logType = LogType.Info)
         {
             OnStatusUpdated?.Invoke(message, logType);
         }
@@ -59,6 +59,7 @@ namespace PlayCanvasGitConnector.LoggingServices
     {
         Info,
         Success,
-        Error
+        Error,
+        Warning
     }
 }

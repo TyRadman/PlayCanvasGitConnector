@@ -116,7 +116,7 @@ namespace PlayCanvasGitConnector.Models
         public ICommand StopJobCommand { get; }
         public ICommand BrowseCommand { get; }
 
-        public MainViewModel()
+        public MainViewModel(Program mainProgram)
         {
             SyncCommand = new RelayCommand(OnSync);
             AutoFillCommand = new RelayCommand(OnAutoFill);
@@ -126,6 +126,8 @@ namespace PlayCanvasGitConnector.Models
 
             IsSyncButtonEnabled = true;
             IsStopButtonEnabled = false;
+
+            mainProgram.RegisterForProcessCompleted(OnProcessFinished);
         }
 
         private void OnBrowse(object parameter)
@@ -189,7 +191,7 @@ namespace PlayCanvasGitConnector.Models
         {
             string cacheFile = FileServices.ReadCacheFile(DirectoriesManager.AppFolder);
 
-            LoggerService.Log($"Retrieved cache from \"{DirectoriesManager.AppFolder}\"", LogType.Info);
+            //LoggerService.Log($"Retrieved cache from \"{DirectoriesManager.AppFolder}\"", LogType.Info);
 
             if (string.IsNullOrEmpty(cacheFile))
             {
@@ -264,6 +266,12 @@ namespace PlayCanvasGitConnector.Models
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void OnProcessFinished()
+        {
+            IsSyncButtonEnabled = true;
+            IsStopButtonEnabled = false;
         }
     }
 }

@@ -37,7 +37,7 @@ namespace PlayCanvasGitConnector.Models
             }
             catch (Exception ex)
             {
-                LoggerService.Log($"An error occurred during Git operations: {ex.Message}", LogType.Success);
+                LoggerService.Log($"Git: {ex.Message}", LogType.Success);
             }
         }
 
@@ -65,20 +65,23 @@ namespace PlayCanvasGitConnector.Models
 
             await process.WaitForExitAsync();
 
-            if (process.ExitCode != 0 && output == "nothing to commit, working tree clean")
+            if (process.ExitCode != 0 && output.Contains("nothing to commit, working tree clean"))
             {
                 LoggerService.Log("Nothing to commit, working tree clean", LogType.Success);
-                return;
+                throw new Exception($"Nothing to commit, working tree clean");
             }
 
             if (process.ExitCode != 0)
             {
-                LoggerService.Log($"Git Command Output: {output}", LogType.Error);
+                LoggerService.Log($"Git Command Output 1: {output}", LogType.Warning);
                 LoggerService.Log($"Git Command Error: {error}", LogType.Error);
                 throw new Exception($"Git command failed: {error}");
             }
 
-            LoggerService.Log($"Git Command Output: {output}", LogType.Info);
+            if (!string.IsNullOrEmpty(output))
+            {
+                LoggerService.Log($"Git Command Output: {output}", LogType.Info);
+            }
         }
 
         internal static string GetRemoteRepository(string directoryPath)
@@ -108,7 +111,7 @@ namespace PlayCanvasGitConnector.Models
 
             if (process.ExitCode != 0)
             {
-                LoggerService.Log($"Git Command Output: {output}", LogType.Error);
+                LoggerService.Log($"Git Command Output: {output}", LogType.Warning);
                 LoggerService.Log($"Git Command Error: {error}", LogType.Error);
                 throw new Exception($"Git command failed: {error}");
             }

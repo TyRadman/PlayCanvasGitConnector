@@ -1,5 +1,4 @@
-﻿using DotNetEnv;
-using System.IO;
+﻿using System.IO;
 
 namespace PlayCanvasGitConnector
 {
@@ -8,8 +7,6 @@ namespace PlayCanvasGitConnector
         internal static string OutputFolder { get; set; } = string.Empty;
         internal static string ProjectFolder { get; set; } = string.Empty;
         internal static string AppFolder { get; set; } = string.Empty;
-        private const string OUTPUT_FOLDER = "OUTPUT_FOLDER";
-        private const string GIT_FOLDER = "GIT_FOLDER";
 
         internal static void Initialize()
         {

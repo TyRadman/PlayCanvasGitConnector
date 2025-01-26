@@ -1,9 +1,10 @@
 {
-  "APIKeyToken": "kKJJHkpjebpmG0JN91btYwDUfv63p0QV",
+  "APIKeyToken": "ltImJeCiNKmNzsOKDoWPWjacZpEXJo0m",
   "ProjectId": "1193353",
-  "BranchID": "",
+  "BranchID": "6c77b015-f2c6-4f3c-ad68-9e7a9292cfb0",
   "SceneIDs": [
     "1956787"
   ],
-  "FileDirectory": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasPortfolioProject"
+  "FileDirectory": "C:\\Users\\timde\\Documents\\GitHub\\PlayCanvasPortfolioProject",
+  "RemoteGitURL": "https://github.com/TyRadman/PlayCanvas_InteractivePortfolio"
 }

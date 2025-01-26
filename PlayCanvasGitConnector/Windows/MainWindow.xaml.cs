@@ -11,10 +11,11 @@ namespace PlayCanvasGitConnector
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Program Program = new Program();
+        private Program MainProgram = new Program();
         private SolidColorBrush _infoColorBrush;
         private SolidColorBrush _successColorBrush;
         private SolidColorBrush _errorColorBrush;
+        private SolidColorBrush _warningColorBrush;
         private MainViewModel _viewModel;
 
         public MainWindow()
@@ -22,14 +23,20 @@ namespace PlayCanvasGitConnector
             InitializeComponent();
 
             LoggerService.RegisterForLog(DisplayStatusOnLabel);
-            Program.RegisterForProcessCompleted(OnProcessCompleted);
+            MainProgram.RegisterForProcessCompleted(OnProcessCompleted);
             //LogTextBlock.Text = "";
 
-            _successColorBrush = (SolidColorBrush)FindResource("PlayCanvasHighlightOrange");
+            // temporary color
+            _successColorBrush = new SolidColorBrush()
+            {
+                Color = new Color() { R = 0, G = 178, B = 0, A = 255 }
+            };
+
             _errorColorBrush = (SolidColorBrush)FindResource("PlayCanvasErrorRed");
             _infoColorBrush = (SolidColorBrush)FindResource("PlayCanvasWhite");
+            _warningColorBrush = (SolidColorBrush)FindResource("PlayCanvasHighlightOrange");
 
-            _viewModel = new MainViewModel();
+            _viewModel = new MainViewModel(MainProgram);
             DataContext = _viewModel;
         }
 
@@ -48,7 +55,8 @@ namespace PlayCanvasGitConnector
             {
                 LogType.Info => _infoColorBrush,
                 LogType.Success => _successColorBrush,
-                LogType.Error => _errorColorBrush
+                LogType.Error => _errorColorBrush,
+                LogType.Warning => _warningColorBrush,
             };
 
             // Create a new Run with the status text and color

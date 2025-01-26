@@ -87,4 +87,8 @@ All logs are automatically saved to a `log.txt` file, which is generated in the 
 
 ---
 
-This tool is designed to simplify the workflow for developers and teams using PlayCanvas and GitHub, ensuring a seamless and efficient sync process.
+---
+
+## Links
+
+[Watch the video here](https://www.youtube.com/watch?v=your-video-id)

@@ -9,9 +9,6 @@ namespace PlayCanvasGitConnector.Models
 {
     internal class PlayCanvasModel
     {
-        private const string PLAYCANVAS_TOKEN = "PLAYCANVAS_TOKEN";
-        private const string PLAYCANVAS_PROJECT_ID = "PLAYCANVAS_PROJECT_ID";
-        private const string SCENE_ID = "SCENE_ID";
         private const string API_BASE_URL = "https://playcanvas.com/api";
         private const string APP_NAME = "Playroom";
 
@@ -54,31 +51,43 @@ namespace PlayCanvasGitConnector.Models
 
         private static async Task<int> StartExportJob(PlayCanvasPushContext context)
         {
-            using var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {context.APIKeyToken}");
+            int downloadID = 0;
 
-            var requestBody = new
+            try
             {
-                project_id = context.ProjectId,
-                scenes = context.SceneIDs,
-                name = APP_NAME,
-                branch_id = context.BranchID
-            };
+                using var client = new HttpClient();
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {context.APIKeyToken}");
 
-            // example of request Body from PlayCanvas API documentation. We perform a POST request to the API endpoint with the request body
-            //{"project_id": "your_project_id_here", "scenes": ["your_scene_id_here"], "name": "Playroom", "branch_id": "your_branch_id_here"}
-            var response = await client.PostAsync($"{API_BASE_URL}/apps/download",
-                new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json"));
+                var requestBody = new
+                {
+                    project_id = context.ProjectId,
+                    scenes = context.SceneIDs,
+                    name = APP_NAME,
+                    branch_id = context.BranchID
+                };
 
-            response.EnsureSuccessStatusCode();
+                // example of request Body from PlayCanvas API documentation. We perform a POST request to the API endpoint with the request body
+                //{"project_id": "your_project_id_here", "scenes": ["your_scene_id_here"], "name": "Playroom", "branch_id": "your_branch_id_here"}
+                var response = await client.PostAsync($"{API_BASE_URL}/apps/download",
+                    new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json"));
 
-            // the response comes in this form. We cache and return the id to check on the status of the process
-            // {"id": 123456,"status": "running","messages": [],"created_at": "2025-01-20T23:11:32.497Z","modified_at": "2025-01-20T23:11:32.497Z","data": {"owner_id": someValue,"project_id": someValue,"branch_id": "someValue","name": "project_name", "scenes": ["scene_number"]}}
-            var responseJson = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
+                context.LogContext();
+                response.EnsureSuccessStatusCode();
 
-            Console.WriteLine($"{responseJson.RootElement}");
+                // the response comes in this form. We cache and return the id to check on the status of the process
+                // {"id": 123456,"status": "running","messages": [],"created_at": "2025-01-20T23:11:32.497Z","modified_at": "2025-01-20T23:11:32.497Z","data": {"owner_id": someValue,"project_id": someValue,"branch_id": "someValue","name": "project_name", "scenes": ["scene_number"]}}
+                var responseJson = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
 
-            return responseJson.RootElement.GetProperty("id").GetInt32();
+                //LoggerService.Log($"{responseJson.RootElement}", LogType.Info);
+
+                downloadID = int.Parse(responseJson.RootElement.GetProperty("id").ToString());
+            }
+            catch (Exception ex)
+            {
+                LoggerService.Log($"An error occurred1: {ex.Message}", LogType.Error);
+            }
+
+            return downloadID;
         }
 
         private static async Task<string> PollForJobCompletion(int jobId, PlayCanvasPushContext context, CancellationTokenSource cancellationTokenSource)
@@ -148,10 +157,20 @@ namespace PlayCanvasGitConnector.Models
             // filter the scripts
             var scripts = assets.Where(asset => asset.GetProperty("type").GetString() == "script");
 
+
+            string downloadDirectory = $"{DirectoriesManager.ProjectFolder}\\scripts";
+
+            if (Directory.Exists(downloadDirectory))
+            {
+                Directory.Delete(downloadDirectory, true);
+            }
+
+            Directory.CreateDirectory(downloadDirectory);
+
             foreach (var script in scripts)
             {
                 cancellationTokenSource.Token.ThrowIfCancellationRequested();
-                await DownloadAsset(script, context);
+                await DownloadAsset(script, context, downloadDirectory);
             }
 
             LoggerService.Log("Scripts downloaded successfully!", LogType.Success);
@@ -171,7 +190,7 @@ namespace PlayCanvasGitConnector.Models
             return assets;
         }
 
-        private static async Task DownloadAsset(JsonElement asset, PlayCanvasPushContext context)
+        private static async Task DownloadAsset(JsonElement asset, PlayCanvasPushContext context, string downloadDirectory)
         {
             using var client = new HttpClient();
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {context.APIKeyToken}");
@@ -181,13 +200,6 @@ namespace PlayCanvasGitConnector.Models
 
             var response = await client.GetAsync($"{API_BASE_URL}/assets/{assetId}/file/{filename}?branchId={context.BranchID}");
             response.EnsureSuccessStatusCode();
-
-            string downloadDirectory = $"{DirectoriesManager.ProjectFolder}\\scripts";
-
-            if (!Directory.Exists(downloadDirectory))
-            {
-                Directory.CreateDirectory(downloadDirectory);
-            }
 
             await using var fileStream = new FileStream($"{downloadDirectory}\\{filename}", FileMode.Create, FileAccess.Write, FileShare.None);
             await response.Content.CopyToAsync(fileStream);
@@ -215,7 +227,6 @@ namespace PlayCanvasGitConnector.Models
             }
 
             ZipFile.ExtractToDirectory(zipFilePath, outputFolder);
-            LoggerService.Log($"Extracted to: {outputFolder}", LogType.Success);
         }
     }
 }

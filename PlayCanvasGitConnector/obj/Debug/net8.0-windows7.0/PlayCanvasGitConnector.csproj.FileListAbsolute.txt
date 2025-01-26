@@ -3,11 +3,6 @@ C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\Pl
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\PlayCanvasGitConnector.runtimeconfig.json
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\PlayCanvasGitConnector.dll
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\PlayCanvasGitConnector.pdb
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\DotNetEnv.dll
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\Microsoft.Extensions.Configuration.dll
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\Microsoft.Extensions.Primitives.dll
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\bin\Debug\net8.0-windows7.0\Sprache.dll
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector.csproj.AssemblyReference.cache
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector_Content.g.cs
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Debug\net8.0-windows7.0\PlayCanvasGitConnector_MarkupCompile.cache

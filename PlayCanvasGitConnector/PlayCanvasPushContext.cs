@@ -36,7 +36,7 @@ namespace PlayCanvasGitConnector
             LoggerService.Log($"API Key Token: {APIKeyToken}", LogType.Info);
             LoggerService.Log($"Project ID: {ProjectId}", LogType.Info);
             LoggerService.Log($"Branch ID: {BranchID}", LogType.Info);
-            LoggerService.Log($"Scene IDs: {string.Join(",", SceneIDs)}", LogType.Info);
+            LoggerService.Log($"Scene IDs: {string.Join(" ", SceneIDs)}", LogType.Info);
         }
     }
 }
