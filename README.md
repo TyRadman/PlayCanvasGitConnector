@@ -20,6 +20,8 @@ This application is ideal for developers and teams working with PlayCanvas (like
 
 ## How It Works
 
+![Process Diagram](./Images/ProcessDiagram.jpg)
+
 1. **Input Configuration**:
    - Enter the required details in the application:
      - **PlayCanvas Project ID**: The unique identifier for the PlayCanvas project.
