@@ -21,6 +21,7 @@ This application is ideal for developers and teams working with PlayCanvas (like
 ## How It Works
 
 ![Process Diagram](./Images/ProcessDiagram.jpg)
+![Process Diagram](./Images/SequenceDiagram.jpg)
 
 1. **Input Configuration**:
    - Enter the required details in the application:
