@@ -20,7 +20,7 @@ This application is ideal for developers and teams working with PlayCanvas (like
 
 ## How It Works
 
-![Process Diagram](./Images/SequenceDiagram.jpg)
+![Process Diagram](./Resources/Images/SequenceDiagram.jpg)
 
 1. **Input Configuration**:
    - Enter the required details in the application:
@@ -52,6 +52,8 @@ This application is ideal for developers and teams working with PlayCanvas (like
      - Download progress.
      - Git operations (cloning, committing, pushing).
      - Success messages or error details.
+
+![Short](./Resources/Gifs/PlayCanvasGitHubSyncTool_Short.gif)
 
 ---
 
@@ -88,4 +90,4 @@ All logs are automatically saved to a `log.txt` file, which is generated in the 
 
 ## Links
 
-[Watch a video showcasing the project here](https://www.youtube.com/watch?v=bf42XXvFCSs) (it will take you out of GitHub)
+[![Watch a video showcasing the project here](./Resources/Images/YT_Thumbnail.jpg)](https://www.youtube.com/watch?v=bf42XXvFCSs)
