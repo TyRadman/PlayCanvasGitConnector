@@ -90,4 +90,4 @@ All logs are automatically saved to a `log.txt` file, which is generated in the 
 
 ## Links
 
-[![Watch a video showcasing the project here](./Resources/Images/YT_Thumbnail.jpg)](https://www.youtube.com/watch?v=bf42XXvFCSs)
+[![Watch a video showcasing the project here](./Resources/Images/YT_Thumbnail.png)](https://www.youtube.com/watch?v=bf42XXvFCSs)
