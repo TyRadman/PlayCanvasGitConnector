@@ -61,7 +61,7 @@ This application is ideal for developers and teams working with PlayCanvas (like
      - Git operations (cloning, committing, pushing).
      - Success messages or error details.
 
-![Short](./Resources/Gifs/PlayCanvasGitHubSyncTool_Short.gif)
+![Short](./Resources/Gifs/PlayCanvasGitHubSyncTool-Short.gif)
 
 ---
 
