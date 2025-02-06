@@ -1,0 +1,36 @@
+name: Build and Release PlayCanvasSync
+
+on:
+  push:
+    tags:
+      - 'v*' # Trigger on versioned tags
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build project
+        run: |
+          dotnet build -c Release
+
+      - name: Zip build artifacts
+        run: |
+          mkdir output
+          Compress-Archive -Path .PlayCanvasGitConnector/bin/Release/* -DestinationPath ./output/PlayCanvasSync.zip
+
+      - name: Upload release assets
+        uses: actions/upload-release-asset@v1
+        with:
+          asset_path: ./output/PlayCanvasSync.zip
+          asset_name: PlayCanvasSyncTool.zip
+          asset_content_type: application/zip
