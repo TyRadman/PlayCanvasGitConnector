@@ -1,13 +1,17 @@
 name: Build and Release PlayCanvasSync
 
 on:
-  push:
-    tags:
-      - 'v*' # Trigger on versioned tags
-  workflow_dispatch: # Allow manual triggering
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-release:
+    # to only run when a PR is merged
+    if: github.event.pull_request.merged == true 
     runs-on: windows-latest
 
     steps:
@@ -26,7 +30,7 @@ jobs:
       - name: Zip build artifacts
         run: |
           mkdir output
-          Compress-Archive -Path .PlayCanvasGitConnector/bin/Release/* -DestinationPath ./output/PlayCanvasSync.zip
+          Compress-Archive -Path ./PlayCanvasGitConnector/bin/Release/* -DestinationPath ./output/PlayCanvasSync.zip
 
       - name: Upload release assets
         uses: actions/upload-release-asset@v1
