@@ -1,5 +1,4 @@
-﻿
-using PlayCanvasGitConnector.LoggingServices;
+﻿using PlayCanvasGitConnector.LoggingServices;
 
 namespace PlayCanvasGitConnector
 {
@@ -10,7 +9,7 @@ namespace PlayCanvasGitConnector
         public string? BranchID { get; set; }
         public string[]? SceneIDs { get; set; }
         public string? FileDirectory { get; set; }
-        public string? RemoteGitURL { get; set; } 
+        public string? RemoteGitURL { get; set; }
 
         internal bool IsValid()
         {

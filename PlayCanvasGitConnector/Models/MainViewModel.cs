@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using Microsoft.WindowsAPICodePack.Dialogs;
+﻿using Microsoft.WindowsAPICodePack.Dialogs;
 using PlayCanvasGitConnector.LoggingServices;
 using PlayCanvasGitConnector.Services;
 using System.ComponentModel;
@@ -152,7 +151,6 @@ namespace PlayCanvasGitConnector.Models
                 RemoteGitUrl = string.Empty;
                 IsGitDirectory = false;
                 LoggerService.Log($"{gitDirectory} doesn't contain .git. Please enter a remote git repository URL.", LogType.Error);
-                //return;
             }
             else
             {
@@ -160,6 +158,15 @@ namespace PlayCanvasGitConnector.Models
             }
 
             DirectoryPath = directory;
+
+            try
+            {
+                RemoteGitUrl = GitHubModel.GetRemoteRepository(DirectoryPath);
+            }
+            catch
+            {
+                LoggerService.Log($"No remote git repository is associated with local directory: {DirectoryPath}", LogType.Warning);
+            }    
         }
 
         private void OnStopJob(object parameter)
@@ -181,6 +188,14 @@ namespace PlayCanvasGitConnector.Models
                 RemoteGitURL = RemoteGitUrl
             };
 
+            string validityReport = PlayCanvasPushContextValidator.Validate(context);
+
+            if (!string.IsNullOrEmpty(validityReport))
+            {
+                LoggerService.Log(validityReport, LogType.Error);
+                return;
+            }
+
             IsSyncButtonEnabled = false;
             IsStopButtonEnabled = true;
 
@@ -190,8 +205,6 @@ namespace PlayCanvasGitConnector.Models
         private void OnAutoFill(object parameter)
         {
             string cacheFile = FileServices.ReadCacheFile(DirectoriesManager.AppFolder);
-
-            //LoggerService.Log($"Retrieved cache from \"{DirectoriesManager.AppFolder}\"", LogType.Info);
 
             if (string.IsNullOrEmpty(cacheFile))
             {
