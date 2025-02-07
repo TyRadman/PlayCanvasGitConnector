@@ -24,7 +24,6 @@ namespace PlayCanvasGitConnector
 
             LoggerService.RegisterForLog(DisplayStatusOnLabel);
             MainProgram.RegisterForProcessCompleted(OnProcessCompleted);
-            //LogTextBlock.Text = "";
 
             // temporary color
             _successColorBrush = new SolidColorBrush()
@@ -114,5 +113,10 @@ namespace PlayCanvasGitConnector
             Program.IsDevMode = false;
         }
         #endregion
+
+        private void ApiTokenTextBox_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -13,15 +13,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Check.png" />
     <None Remove="Resources\Icon.ico" />
+    <None Remove="Resources\LightBulb.png" />
+    <None Remove="Resources\Warning.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Icon.ico" />
+    <DesignData Include="Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Check.png" />
+    <Resource Include="Resources\LightBulb.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Warning.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
