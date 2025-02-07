@@ -1,17 +1,13 @@
 name: Build and Release PlayCanvasSync
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     branches:
-      - main
-  workflow_dispatch:
+      - main # Trigger only on pushes to main
+  workflow_dispatch: # Allow manual triggering
 
 jobs:
   build-and-release:
-    # to only run when a PR is merged
-    if: github.event.pull_request.merged == true 
     runs-on: windows-latest
 
     steps:
