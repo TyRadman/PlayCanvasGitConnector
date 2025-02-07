@@ -8,7 +8,6 @@ C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\Pl
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Release\net8.0-windows7.0\PlayCanvasGitConnector.csproj.AssemblyReference.cache
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Release\net8.0-windows7.0\Windows\ColorPallette.baml
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Release\net8.0-windows7.0\Windows\MainWindow.g.cs
-C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Release\net8.0-windows7.0\PlayCanvasGitConnector_Content.g.cs
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Release\net8.0-windows7.0\PlayCanvasGitConnector_MarkupCompile.cache
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Release\net8.0-windows7.0\PlayCanvasGitConnector_MarkupCompile.lref
 C:\Users\timde\Documents\GitHub\PlayCanvasGitConnector\PlayCanvasGitConnector\PlayCanvasGitConnector\obj\Release\net8.0-windows7.0\Windows\MainWindow.baml

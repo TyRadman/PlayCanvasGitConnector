@@ -24,7 +24,7 @@ namespace PlayCanvasGitConnector
                 LoggerService.Log($"API Key Token: {APIKeyToken}", logType);
             }
 
-            if(String.IsNullOrEmpty(ProjectId))
+            if (String.IsNullOrEmpty(ProjectId))
             {
                 LoggerService.Log($"Project ID: {ProjectId}", logType);
             }

@@ -29,47 +29,113 @@
         <!-- StackPanel for Input -->
         <StackPanel Grid.Row="0" Margin="10, 0, 10, 0">
             <Label Content="API Token:" Foreground="{StaticResource PlayCanvasWhite}"/>
-            <TextBox 
-                x:Name="ApiTokenTextBox" 
-                Text="{Binding APIKeyToken, UpdateSourceTrigger=PropertyChanged}"
-                Background="{StaticResource PlayCanvasSidebar}" 
-                Foreground="{StaticResource PlayCanvasWhite}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox 
+                    Text="{Binding APIKeyTokenTextBox.Text, UpdateSourceTrigger=PropertyChanged}"
+                    DataContextChanged="ApiTokenTextBox_DataContextChanged"
+                    Background="{StaticResource PlayCanvasSidebar}" 
+                    Foreground="{StaticResource PlayCanvasWhite}"
+                    Grid.Column="0"/>
+
+                <Image 
+                    Source="{Binding APIKeyTokenTextBox.IconSource, UpdateSourceTrigger=PropertyChanged}" 
+                    Width="16" Height="16" 
+                    Margin="5,0,0,0" 
+                    Grid.Column="1"
+                    Visibility="{Binding APIKeyTokenTextBox.IconVisibility, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
             <TextBlock Text="Found in PlayCanvas account settings." 
                        Margin="0, 0, 0, 0" 
                        IsHitTestVisible="False" 
                        FontSize="10" 
                        Foreground="{StaticResource PlayCanvasSecondaryGray}"/>
 
+
+            <!-- Project ID -->
             <Label Content="Project ID:" Foreground="{StaticResource PlayCanvasWhite}"/>
-            <TextBox 
-                x:Name="ProjectIDTextBox" 
-                Text="{Binding ProjectId, UpdateSourceTrigger=PropertyChanged}"
-                Background="{StaticResource PlayCanvasSidebar}" 
-                Foreground="{StaticResource PlayCanvasWhite}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox 
+                    Text="{Binding ProjectIDTextBox.Text, UpdateSourceTrigger=PropertyChanged}"
+                    DataContextChanged="ApiTokenTextBox_DataContextChanged"
+                    Background="{StaticResource PlayCanvasSidebar}" 
+                    Foreground="{StaticResource PlayCanvasWhite}"
+                    Grid.Column="0"/>
+
+                <Image 
+                    Source="{Binding ProjectIDTextBox.IconSource, UpdateSourceTrigger=PropertyChanged}" 
+                    Width="16" Height="16" 
+                    Margin="5,0,0,0" 
+                    Grid.Column="1"
+                    Visibility="{Binding ProjectIDTextBox.IconVisibility, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
             <TextBlock Text="Found in the browser URL when the project is open in the HUB." 
                        Margin="0, 0, 0, 0" 
                        IsHitTestVisible="False" 
                        FontSize="10" 
                        Foreground="{StaticResource PlayCanvasSecondaryGray}"/>
 
+            <!-- Branch ID -->
             <Label Content="Branch ID:" Foreground="{StaticResource PlayCanvasWhite}"/>
-            <TextBox 
-                x:Name="BranchIDTextBox" 
-                Text="{Binding BranchId, UpdateSourceTrigger=PropertyChanged}"
-                Background="{StaticResource PlayCanvasSidebar}" 
-                Foreground="{StaticResource PlayCanvasWhite}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox 
+                    Text="{Binding BranchIDTextBox.Text, UpdateSourceTrigger=PropertyChanged}"
+                    DataContextChanged="ApiTokenTextBox_DataContextChanged"
+                    Background="{StaticResource PlayCanvasSidebar}" 
+                    Foreground="{StaticResource PlayCanvasWhite}"
+                    Grid.Column="0"/>
+
+                <Image 
+                    Source="{Binding BranchIDTextBox.IconSource, UpdateSourceTrigger=PropertyChanged}" 
+                    Width="16" Height="16" 
+                    Margin="5,0,0,0" 
+                    Grid.Column="1"
+                    ToolTip="{Binding SceneIDsTextBox.Tooltip}"
+                    Visibility="{Binding BranchIDTextBox.IconVisibility, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
             <TextBlock Text="(Optional) Found in the source control page. Main branch used by default." 
                        Margin="0, 0, 0, 0" 
                        IsHitTestVisible="False" 
                        FontSize="10" 
                        Foreground="{StaticResource PlayCanvasSecondaryGray}"/>
 
+            <!-- Scene ID -->
             <Label Content="Scene ID:" Foreground="{StaticResource PlayCanvasWhite}"/>
-            <TextBox 
-                x:Name="SceneIDTextBox" 
-                Text="{Binding ScenesIds, UpdateSourceTrigger=PropertyChanged}"
-                Background="{StaticResource PlayCanvasSidebar}" 
-                Foreground="{StaticResource PlayCanvasWhite}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox 
+                    Text="{Binding SceneIDsTextBox.Text, UpdateSourceTrigger=PropertyChanged}"
+                    DataContextChanged="ApiTokenTextBox_DataContextChanged"
+                    Background="{StaticResource PlayCanvasSidebar}" 
+                    Foreground="{StaticResource PlayCanvasWhite}"
+                    Grid.Column="0"/>
+
+                <Image 
+                    Source="{Binding SceneIDsTextBox.IconSource, UpdateSourceTrigger=PropertyChanged}" 
+                    Width="16" Height="16" 
+                    Margin="5,0,0,0" 
+                    Grid.Column="1"
+                    ToolTip="{Binding SceneIDsTextBox.Tooltip}"
+                    Visibility="{Binding SceneIDsTextBox.IconVisibility, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
             <TextBlock Text="Found in the browser URL when the scene is open in the editor." 
                        Margin="0, 0, 0, 0" 
                        IsHitTestVisible="False" 
@@ -82,27 +148,36 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="DirectoryTextBox" 
-                 Text="{Binding DirectoryPath, UpdateSourceTrigger=PropertyChanged}" 
-                 VerticalAlignment="Center" 
-                 HorizontalAlignment="Stretch"  
-                 Margin="0,0,0,0" 
-                         Grid.Column="0"
-                Background="{StaticResource PlayCanvasSidebar}" 
-                Foreground="{StaticResource PlayCanvasWhite}"/>
+                     Text="{Binding DirectoryPathTextBox.Text, UpdateSourceTrigger=PropertyChanged}" 
+                     VerticalAlignment="Center" 
+                     HorizontalAlignment="Stretch"  
+                     Margin="0,0,0,0" 
+                     Grid.Column="0"
+                     Background="{StaticResource PlayCanvasSidebar}" 
+                     Foreground="{StaticResource PlayCanvasWhite}"/>
 
-                <Button Content="Browse..." 
-                VerticalAlignment="Center" 
-                HorizontalAlignment="Right" 
-                Width="80" 
-                Margin="10,0,0,0" 
-                         Grid.Column="1"
-                Command="{Binding BrowseCommand}"
-                BorderBrush ="{StaticResource PlayCanvasHighlightOrange}"
-                Background="{StaticResource PlayCanvasSidebar}" 
-                Foreground="{StaticResource PlayCanvasHighlightOrange}"/>
+                <Image 
+                    Source="{Binding DirectoryPathTextBox.IconSource, UpdateSourceTrigger=PropertyChanged}" 
+                    Width="16" Height="16" 
+                    Margin="5,0,0,0" 
+                    Grid.Column="1"
+                    Visibility="{Binding DirectoryPathTextBox.IconVisibility, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Button 
+                    Content="Browse..." 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Right" 
+                    Width="80" 
+                    Margin="10,0,0,0" 
+                    Grid.Column="2"
+                    Command="{Binding BrowseCommand}"
+                    BorderBrush ="{StaticResource PlayCanvasHighlightOrange}"
+                    Background="{StaticResource PlayCanvasSidebar}" 
+                    Foreground="{StaticResource PlayCanvasHighlightOrange}"/>
             </Grid>
             <TextBlock Text="The path to the local git repository." 
                        Margin="0, 0, 0, 0" 
@@ -116,10 +191,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBox x:Name="RemoteRepoLinkTextBox" 
-                     Text="{Binding RemoteGitUrl, UpdateSourceTrigger=PropertyChanged}" 
+                     Text="{Binding GitRemoteURLTextBox.Text, UpdateSourceTrigger=PropertyChanged}" 
                      VerticalScrollBarVisibility="Disabled"
                      IsReadOnly="{Binding IsGitDirectory}"
                      VerticalAlignment="Center" 
@@ -128,6 +204,13 @@
                      Grid.Column="0"
                      Background="{StaticResource PlayCanvasSidebar}" 
                      Foreground="{StaticResource PlayCanvasWhite}"/>
+                
+                <Image 
+                    Source="{Binding GitRemoteURLTextBox.IconSource, UpdateSourceTrigger=PropertyChanged}" 
+                    Width="16" Height="16" 
+                    Margin="5,0,0,0" 
+                    Grid.Column="1"
+                    Visibility="{Binding GitRemoteURLTextBox.IconVisibility, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <Button Content="Initiate Git" 
                     IsEnabled="False"
@@ -135,7 +218,7 @@
                     HorizontalAlignment="Right" 
                     Width="80" 
                     Margin="10,0,0,0" 
-                    Grid.Column="1"
+                    Grid.Column="2"
                     Command="{Binding BrowseCommand}"
                     BorderBrush ="{StaticResource PlayCanvasHighlightOrange}"
                     Background="{StaticResource PlayCanvasSidebar}" 
