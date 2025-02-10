@@ -1,10 +1,10 @@
 # PlayCanvas/GitHub Sync Tool
 
 <p>
-  <img src="https://img.shields.io/badge/C%23-239120?logo=csharp&logoColor=white&style=for-the-badge" height="30">
-  <img src="https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white&style=for-the-badge" height="30">
-  <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=for-the-badge" height="30">
-  <img src="https://img.shields.io/badge/PlayCanvas-FF3300?logo=playcanvas&logoColor=white&style=for-the-badge" height="30">
+  <img src="https://img.shields.io/badge/C%23-239120?logo=csharp&logoColor=white&style=for-the-badge" height="40">
+  <img src="https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white&style=for-the-badge" height="40">
+  <img src="https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=for-the-badge" height="40">
+  <img src="https://img.shields.io/badge/PlayCanvas-FF3300?logo=playcanvas&logoColor=white&style=for-the-badge" height="40">
 </p>
 
 
